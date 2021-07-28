@@ -1,0 +1,13 @@
+C:\Users\ryant\Documents\GitHub\RTools\RTools\bin\Debug\RTools.exe.config
+C:\Users\ryant\Documents\GitHub\RTools\RTools\bin\Debug\RTools.exe
+C:\Users\ryant\Documents\GitHub\RTools\RTools\bin\Debug\RTools.pdb
+C:\Users\ryant\Documents\GitHub\RTools\RTools\obj\Debug\RTools.csproj.AssemblyReference.cache
+C:\Users\ryant\Documents\GitHub\RTools\RTools\obj\Debug\RTools.Form1.resources
+C:\Users\ryant\Documents\GitHub\RTools\RTools\obj\Debug\RTools.Properties.Resources.resources
+C:\Users\ryant\Documents\GitHub\RTools\RTools\obj\Debug\RTools.csproj.GenerateResource.cache
+C:\Users\ryant\Documents\GitHub\RTools\RTools\obj\Debug\RTools.csproj.CoreCompileInputs.cache
+C:\Users\ryant\Documents\GitHub\RTools\RTools\obj\Debug\RTools.exe
+C:\Users\ryant\Documents\GitHub\RTools\RTools\obj\Debug\RTools.pdb
+C:\Users\ryant\Documents\GitHub\RTools\RTools\obj\Debug\RTools.TextFileJoiner.resources
+C:\Users\ryant\Documents\GitHub\RTools\RTools\obj\Debug\RTools.SearchAppend.resources
+C:\Users\ryant\Documents\GitHub\RTools\RTools\obj\Debug\RTools.AddList.resources
