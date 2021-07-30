@@ -18,9 +18,9 @@ namespace RTools
         {
             InitializeComponent();
 
-            const string currentVersion = "1.0.1.2";
+            const string currentVersion = "1.0.1.3";
 
-            var webRequest = WebRequest.Create(@"https://github.com/RShupe/RTools/raw/master/currentreleaseversion.txt");
+            var webRequest = WebRequest.Create(@"https://github.com/RShupe/RTools/raw/main/currentreleaseversion.txt");
             string strContent= "";
             using (var response = webRequest.GetResponse())
             using (var content = response.GetResponseStream())
@@ -28,8 +28,6 @@ namespace RTools
             {
                  strContent = reader.ReadToEnd();
             }
-
-            Console.WriteLine(strContent);
             if (strContent != currentVersion)
             {
                 DialogResult dialogResult = MessageBox.Show("A new update is available. Would you like to download it?", "RTools Updater", MessageBoxButtons.YesNo);
