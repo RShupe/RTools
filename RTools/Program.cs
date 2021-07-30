@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -28,7 +29,7 @@ namespace RTools
             if (args.Length >= 4)
             {
                 //search and append
-                if(args[0] == "sa")
+                if (args[0] == "sa")
                 {
                     string path1 = args[1].ToString();
                     string path2 = args[2].ToString();
@@ -113,7 +114,7 @@ namespace RTools
             }
             else if(args.Length == 1)
             {
-                if(args[0] == "sa")
+                if (args[0] == "sa")
                 {
                     Console.WriteLine("[MESSAGE] Running Search Append Example: rtools.exe sa inputpath.txt outputpath.txt keyword1 keyword2 ... \n\n [Console Only] If you have quotes in your keywords, use a forward slash before them!");
                 }else if (args[0] == "tfj")

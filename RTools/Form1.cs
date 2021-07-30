@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,6 +17,31 @@ namespace RTools
         public Form1()
         {
             InitializeComponent();
+
+            const string currentVersion = "1.0.1.2";
+
+            var webRequest = WebRequest.Create(@"https://github.com/RShupe/RTools/raw/master/currentreleaseversion.txt");
+            string strContent= "";
+            using (var response = webRequest.GetResponse())
+            using (var content = response.GetResponseStream())
+            using (var reader = new StreamReader(content))
+            {
+                 strContent = reader.ReadToEnd();
+            }
+
+            Console.WriteLine(strContent);
+            if (strContent != currentVersion)
+            {
+                DialogResult dialogResult = MessageBox.Show("A new update is available. Would you like to download it?", "RTools Updater", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    System.Diagnostics.Process.Start("https://github.com/RShupe/RTools/releases");
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    ///do nothing
+                }
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
