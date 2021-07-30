@@ -74,6 +74,35 @@ namespace RTools
                 //TextFileJoiner
                 else if(args[0] == "tfj")
                 {
+                    try
+                    {
+                        FileHandler handler = new FileHandler();
+
+                        handler.saveDestination = args[1];
+                        handler.SetNumOfSpaces(Convert.ToInt32(args[2]));
+
+                        if (args[3] == "y" || args[3] == "Y")
+                        {
+                            handler.SetDeleteFiles(true);
+                        }
+                        else
+                        {
+                            handler.SetDeleteFiles(false);
+                        }
+
+                        List<string> inputPaths = new List<string>();
+
+                        for (int i = 4; i < args.Length; i++)
+                        {
+                            handler.fileNames.Add(args[i]);
+                        }
+
+                        handler.Convert();
+                    }
+                    catch (Exception)
+                    {
+                        Console.WriteLine("[ERROR] Invalid parameters. rtools.exe tfj outputpath.txt 5 N input1path.txt input2path.txt");
+                    }
 
                 }
                 else
@@ -82,9 +111,19 @@ namespace RTools
                 }
                 
             }
+            else if(args.Length == 1)
+            {
+                if(args[0] == "sa")
+                {
+                    Console.WriteLine("[MESSAGE] Running Search Append Example: rtools.exe sa inputpath.txt outputpath.txt keyword1 keyword2 ... \n\n [Console Only] If you have quotes in your keywords, use a forward slash before them!");
+                }else if (args[0] == "tfj")
+                {
+                    Console.WriteLine("[MESSAGE] Running Text File Joiner Example: rtools.exe tfj outputpath.txt linestoseperate (Y/N)Deleteoriginalfiles inputpath1.txt inputpath2.txt ...");
+                }
+            }
             else if (args.Length < 3 && args.Length != 0)
             {
-                Console.WriteLine("[ERROR] NOT ENOUGH ARGUMENTS, ATLEAST 4 REQUIRED, {tool to use} {path to search} {path to output} {keyword1}");
+                Console.WriteLine("[ERROR] NOT ENOUGH ARGUMENTS, ATLEAST 4 REQUIRED, type one argument {sa, tfj} to get a brief explanation. (ex. rtools.exe sa)");
             }
             else
             {

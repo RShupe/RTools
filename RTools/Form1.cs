@@ -51,7 +51,8 @@ namespace RTools
 
         private void button3_Click(object sender, EventArgs e)
         {
-            openChildForm(new HelpForm());
+            Form helpForm = new HelpForm();
+            helpForm.Show();
         }
     }
 }

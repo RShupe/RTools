@@ -22,7 +22,6 @@ namespace RTools
 
         string path1 = "";
         string path2 = "";
-        string keyword = "";
 
         List<string> kwList = new List<string>();
 

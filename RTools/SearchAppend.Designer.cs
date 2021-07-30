@@ -40,9 +40,9 @@ namespace RTools
             this.startButton = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -57,7 +57,7 @@ namespace RTools
             this.RemoveButton.Location = new System.Drawing.Point(241, 182);
             this.RemoveButton.Name = "RemoveButton";
             this.RemoveButton.Size = new System.Drawing.Size(177, 30);
-            this.RemoveButton.TabIndex = 13;
+            this.RemoveButton.TabIndex = 3;
             this.RemoveButton.Text = "Remove";
             this.RemoveButton.UseVisualStyleBackColor = false;
             this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click_1);
@@ -72,7 +72,7 @@ namespace RTools
             this.addButton.Location = new System.Drawing.Point(241, 100);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(177, 34);
-            this.addButton.TabIndex = 11;
+            this.addButton.TabIndex = 2;
             this.addButton.Text = "Add a Keyword";
             this.addButton.UseVisualStyleBackColor = false;
             this.addButton.Click += new System.EventHandler(this.addButton_Click_1);
@@ -101,7 +101,7 @@ namespace RTools
             this.path2Button.Location = new System.Drawing.Point(300, 44);
             this.path2Button.Name = "path2Button";
             this.path2Button.Size = new System.Drawing.Size(142, 29);
-            this.path2Button.TabIndex = 15;
+            this.path2Button.TabIndex = 1;
             this.path2Button.Text = "Select Append File";
             this.path2Button.UseVisualStyleBackColor = false;
             this.path2Button.Click += new System.EventHandler(this.path2Button_Click_1);
@@ -116,7 +116,7 @@ namespace RTools
             this.path1Button.Location = new System.Drawing.Point(300, 233);
             this.path1Button.Name = "path1Button";
             this.path1Button.Size = new System.Drawing.Size(142, 29);
-            this.path1Button.TabIndex = 8;
+            this.path1Button.TabIndex = 4;
             this.path1Button.Text = "Select Source File";
             this.path1Button.UseVisualStyleBackColor = false;
             this.path1Button.Click += new System.EventHandler(this.path1Button_Click_1);
@@ -171,7 +171,7 @@ namespace RTools
             this.startButton.Location = new System.Drawing.Point(122, 15);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(208, 45);
-            this.startButton.TabIndex = 16;
+            this.startButton.TabIndex = 5;
             this.startButton.Text = "Search and Append";
             this.startButton.UseVisualStyleBackColor = false;
             this.startButton.Click += new System.EventHandler(this.startButton_Click_1);
@@ -205,6 +205,16 @@ namespace RTools
             this.panel1.Size = new System.Drawing.Size(449, 420);
             this.panel1.TabIndex = 17;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(51)))), ((int)(((byte)(87)))));
+            this.label2.Location = new System.Drawing.Point(16, 11);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(134, 17);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Search and Append";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -225,16 +235,6 @@ namespace RTools
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(449, 142);
             this.panel2.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(51)))), ((int)(((byte)(87)))));
-            this.label2.Location = new System.Drawing.Point(16, 11);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(134, 17);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Search and Append";
             // 
             // SearchAppend
             // 

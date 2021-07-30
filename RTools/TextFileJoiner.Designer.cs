@@ -77,7 +77,7 @@ namespace RTools
             this.deleteFilesBox.Location = new System.Drawing.Point(246, 241);
             this.deleteFilesBox.Name = "deleteFilesBox";
             this.deleteFilesBox.Size = new System.Drawing.Size(15, 14);
-            this.deleteFilesBox.TabIndex = 18;
+            this.deleteFilesBox.TabIndex = 4;
             this.deleteFilesBox.UseVisualStyleBackColor = false;
             this.deleteFilesBox.CheckedChanged += new System.EventHandler(this.deleteFilesBox_CheckedChanged);
             // 
@@ -95,7 +95,7 @@ namespace RTools
             0});
             this.numSpaces.Name = "numSpaces";
             this.numSpaces.Size = new System.Drawing.Size(45, 19);
-            this.numSpaces.TabIndex = 17;
+            this.numSpaces.TabIndex = 3;
             this.numSpaces.Value = new decimal(new int[] {
             1,
             0,
@@ -146,7 +146,7 @@ namespace RTools
             this.btnConvert.Location = new System.Drawing.Point(224, 136);
             this.btnConvert.Name = "btnConvert";
             this.btnConvert.Size = new System.Drawing.Size(131, 46);
-            this.btnConvert.TabIndex = 13;
+            this.btnConvert.TabIndex = 2;
             this.btnConvert.Text = "Join";
             this.btnConvert.UseVisualStyleBackColor = false;
             this.btnConvert.Click += new System.EventHandler(this.btnConvert_Click);
@@ -161,7 +161,7 @@ namespace RTools
             this.btnOpen.Location = new System.Drawing.Point(66, 136);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(131, 46);
-            this.btnOpen.TabIndex = 12;
+            this.btnOpen.TabIndex = 1;
             this.btnOpen.Text = "Open files";
             this.btnOpen.UseVisualStyleBackColor = false;
             this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);

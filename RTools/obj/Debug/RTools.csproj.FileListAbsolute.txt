@@ -11,3 +11,4 @@ C:\Users\ryant\Documents\GitHub\RTools\RTools\obj\Debug\RTools.pdb
 C:\Users\ryant\Documents\GitHub\RTools\RTools\obj\Debug\RTools.TextFileJoiner.resources
 C:\Users\ryant\Documents\GitHub\RTools\RTools\obj\Debug\RTools.SearchAppend.resources
 C:\Users\ryant\Documents\GitHub\RTools\RTools\obj\Debug\RTools.AddList.resources
+C:\Users\ryant\Documents\GitHub\RTools\RTools\obj\Debug\RTools.HelpForm.resources

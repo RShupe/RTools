@@ -10,9 +10,9 @@ namespace RTools
 {
     internal class FileHandler
     {
-        private List<string> fileNames;
-        private string saveDestination = "";
-        private int numberOfSpaces;
+        public List<string> fileNames;
+        public string saveDestination = "";
+        public int numberOfSpaces;
         private string spaces = "";
         private bool deleteOriginalFiles;
 

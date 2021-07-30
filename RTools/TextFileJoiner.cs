@@ -46,6 +46,7 @@ namespace RTools
 
                     numberLabel.Text = "Number of files to be joined: 0";
                     readyLabel.Text = "Waiting for files...";
+
                     MessageBox.Show("Success!");
                     this.Refresh();
                 }

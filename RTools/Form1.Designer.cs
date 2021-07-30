@@ -31,13 +31,13 @@ namespace RTools
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panelSideMenu = new System.Windows.Forms.Panel();
-            this.childFormPanel = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnTextFileJoiner = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.childFormPanel = new System.Windows.Forms.Panel();
             this.panelSideMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.SuspendLayout();
@@ -56,14 +56,6 @@ namespace RTools
             this.panelSideMenu.Size = new System.Drawing.Size(250, 417);
             this.panelSideMenu.TabIndex = 0;
             // 
-            // childFormPanel
-            // 
-            this.childFormPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(43)))), ((int)(((byte)(48)))));
-            this.childFormPanel.Location = new System.Drawing.Point(250, 0);
-            this.childFormPanel.Name = "childFormPanel";
-            this.childFormPanel.Size = new System.Drawing.Size(448, 417);
-            this.childFormPanel.TabIndex = 1;
-            // 
             // button3
             // 
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -78,7 +70,7 @@ namespace RTools
             this.button3.Name = "button3";
             this.button3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.button3.Size = new System.Drawing.Size(250, 45);
-            this.button3.TabIndex = 4;
+            this.button3.TabIndex = 3;
             this.button3.Text = "About / Help";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -99,7 +91,7 @@ namespace RTools
             this.button2.Name = "button2";
             this.button2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.button2.Size = new System.Drawing.Size(250, 45);
-            this.button2.TabIndex = 3;
+            this.button2.TabIndex = 4;
             this.button2.Text = "Exit";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -152,7 +144,7 @@ namespace RTools
             // 
             // panelLogo
             // 
-            this.panelLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelLogo.BackgroundImage")));
+            this.panelLogo.BackgroundImage = global::RTools.Properties.Resources.LogoFullPaddingSmall1;
             this.panelLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panelLogo.Controls.Add(this.panel1);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
@@ -168,6 +160,14 @@ namespace RTools
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(478, 442);
             this.panel1.TabIndex = 1;
+            // 
+            // childFormPanel
+            // 
+            this.childFormPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(43)))), ((int)(((byte)(48)))));
+            this.childFormPanel.Location = new System.Drawing.Point(250, 0);
+            this.childFormPanel.Name = "childFormPanel";
+            this.childFormPanel.Size = new System.Drawing.Size(448, 417);
+            this.childFormPanel.TabIndex = 1;
             // 
             // Form1
             // 
