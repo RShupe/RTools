@@ -18,7 +18,7 @@ namespace RTools
         {
             InitializeComponent();
 
-            const string currentVersion = "1.0.1.4";
+            const string currentVersion = "1.1.1.0";
 
             var webRequest = WebRequest.Create(@"https://github.com/RShupe/RTools/raw/main/currentreleaseversion.txt");
             string strContent= "";
@@ -78,6 +78,11 @@ namespace RTools
         {
             Form helpForm = new HelpForm();
             helpForm.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            openChildForm(new CSVExtractor());
         }
     }
 }

@@ -117,7 +117,7 @@ namespace RTools
             this.path1Button.Name = "path1Button";
             this.path1Button.Size = new System.Drawing.Size(142, 29);
             this.path1Button.TabIndex = 4;
-            this.path1Button.Text = "Select Source File";
+            this.path1Button.Text = "Select Dest. File";
             this.path1Button.UseVisualStyleBackColor = false;
             this.path1Button.Click += new System.EventHandler(this.path1Button_Click_1);
             // 

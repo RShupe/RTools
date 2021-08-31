@@ -83,6 +83,16 @@ namespace RTools.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap csv2 {
+            get {
+                object obj = ResourceManager.GetObject("csv2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Exit {
             get {
                 object obj = ResourceManager.GetObject("Exit", resourceCulture);
@@ -166,6 +176,16 @@ namespace RTools.Properties {
         internal static System.Drawing.Bitmap textfilejoiner {
             get {
                 object obj = ResourceManager.GetObject("textfilejoiner", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap textfilejoiner1 {
+            get {
+                object obj = ResourceManager.GetObject("textfilejoiner1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

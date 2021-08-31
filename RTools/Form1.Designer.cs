@@ -31,6 +31,7 @@ namespace RTools
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panelSideMenu = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -45,6 +46,7 @@ namespace RTools
             // panelSideMenu
             // 
             this.panelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(36)))));
+            this.panelSideMenu.Controls.Add(this.button4);
             this.panelSideMenu.Controls.Add(this.button3);
             this.panelSideMenu.Controls.Add(this.button2);
             this.panelSideMenu.Controls.Add(this.button1);
@@ -55,6 +57,28 @@ namespace RTools
             this.panelSideMenu.Name = "panelSideMenu";
             this.panelSideMenu.Size = new System.Drawing.Size(250, 417);
             this.panelSideMenu.TabIndex = 0;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(36)))));
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(7)))), ((int)(((byte)(21)))));
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.button4.Image = global::RTools.Properties.Resources.csv2;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(0, 190);
+            this.button4.Name = "button4";
+            this.button4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.button4.Size = new System.Drawing.Size(250, 45);
+            this.button4.TabIndex = 5;
+            this.button4.Text = "Export to CSV";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -107,7 +131,7 @@ namespace RTools
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(7)))), ((int)(((byte)(21)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Image = global::RTools.Properties.Resources.search1;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(0, 145);
             this.button1.Name = "button1";
@@ -129,14 +153,14 @@ namespace RTools
             this.btnTextFileJoiner.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(7)))), ((int)(((byte)(21)))));
             this.btnTextFileJoiner.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTextFileJoiner.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnTextFileJoiner.Image = ((System.Drawing.Image)(resources.GetObject("btnTextFileJoiner.Image")));
-            this.btnTextFileJoiner.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTextFileJoiner.Image = global::RTools.Properties.Resources.textfilejoiner1;
+            this.btnTextFileJoiner.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btnTextFileJoiner.Location = new System.Drawing.Point(0, 100);
             this.btnTextFileJoiner.Name = "btnTextFileJoiner";
             this.btnTextFileJoiner.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnTextFileJoiner.Size = new System.Drawing.Size(250, 45);
             this.btnTextFileJoiner.TabIndex = 1;
-            this.btnTextFileJoiner.Text = "   Text File Joiner";
+            this.btnTextFileJoiner.Text = "Text File Joiner";
             this.btnTextFileJoiner.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTextFileJoiner.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTextFileJoiner.UseVisualStyleBackColor = false;
@@ -184,7 +208,7 @@ namespace RTools
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "RTools";
+            this.Text = "rtools";
             this.panelSideMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -201,6 +225,7 @@ namespace RTools
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel childFormPanel;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }
 
