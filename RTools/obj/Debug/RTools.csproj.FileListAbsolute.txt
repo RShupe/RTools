@@ -15,3 +15,6 @@ C:\Users\ryant\Documents\GitHub\RTools\RTools\obj\Debug\RTools.exe.manifest
 C:\Users\ryant\Documents\GitHub\RTools\RTools\obj\Debug\RTools.application
 C:\Users\ryant\Documents\GitHub\RTools\RTools\obj\Debug\RTools.exe
 C:\Users\ryant\Documents\GitHub\RTools\RTools\obj\Debug\RTools.pdb
+C:\Users\ryant\Documents\GitHub\RTools\RTools\obj\Debug\RTools.csproj.AssemblyReference.cache
+C:\Users\ryant\Documents\GitHub\RTools\RTools\obj\Debug\RTools.csproj.ResolveComReference.cache
+C:\Users\ryant\Documents\GitHub\RTools\RTools\obj\Debug\RTools.CSVExtractor.resources

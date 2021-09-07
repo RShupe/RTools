@@ -37,6 +37,7 @@ namespace RTools
             this.startButton = new System.Windows.Forms.Button();
             this.path1Box = new System.Windows.Forms.TextBox();
             this.path2Button = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -44,6 +45,7 @@ namespace RTools
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(43)))), ((int)(((byte)(48)))));
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.path1Button);
             this.panel1.Controls.Add(this.path2Box);
@@ -149,6 +151,16 @@ namespace RTools
             this.path2Button.UseVisualStyleBackColor = false;
             this.path2Button.Click += new System.EventHandler(this.path2Button_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.IndianRed;
+            this.label1.Location = new System.Drawing.Point(28, 134);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(295, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "As of right now, this tool only detects and extracts debit cards";
+            // 
             // CSVExtractor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -175,5 +187,6 @@ namespace RTools
         private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.TextBox path1Box;
         private System.Windows.Forms.Button path2Button;
+        private System.Windows.Forms.Label label1;
     }
 }

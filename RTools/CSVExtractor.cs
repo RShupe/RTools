@@ -28,7 +28,8 @@ namespace RTools
             System.Data.DataTable table = new System.Data.DataTable();
 
             //columns
-            table.Columns.Add("CARD", typeof(string));
+            table.Columns.Add("CARD NUMBER", typeof(string));
+            table.Columns.Add("ACCOUNT", typeof(string));
             table.Columns.Add("DATE TIME", typeof(string));
             table.Columns.Add("DESCR TYP CODE", typeof(string));
             table.Columns.Add("AMOUNT", typeof(string));
@@ -37,14 +38,151 @@ namespace RTools
             table.Columns.Add("LOCATION", typeof(string));
             table.Columns.Add("COMPANY", typeof(string));
             table.Columns.Add("CARD STATUS", typeof(string));
-            table.Columns.Add("CardHit", typeof(int));
-            table.Columns.Add("MerchHit", typeof(int));
-            table.Columns.Add("Count", typeof(int));
 
-            //rows
-            table.Rows.Add("=\"4855820001106896\"", "=\"8/16 03:02 0000\"", "=\"PUR-CHK PA 057\"", "=\"998.10\"", "=\"000445487599\"", "=\"5970\"", "=\"KY LOUISVILLE\"", "=\"143VINUL\"", "=\"ODE=0100 CARD NOT PRESENT SNP MOBL\"", 1, 1, 1);
 
-            
+
+            //populate table by reading in file
+            using (StreamReader sr = new StreamReader(path1))
+            {
+                string currentEntry = "";
+                bool bai = false;
+
+                //skip the 12 header lines
+                for (int i = 0; i < 11; i++)
+                {
+                    string tmp = sr.ReadLine();
+                }
+
+                bool skip = false;
+
+                while (sr.Peek() >= 0)
+                { 
+                    //get whole entry
+                    for(int i = 0; i < 4; i++)
+                    {
+                        currentEntry += sr.ReadLine();
+                        if (i==2 && currentEntry.Contains("WDL-CHK") || 
+                            i == 2 && currentEntry.Contains("INQ-SAV"))
+                        {
+                            skip = true;
+                            i++;
+                        }
+                        if ((i == 2 && currentEntry.Contains("INQ-CHK")))
+                        {
+                            skip = true;
+
+                            currentEntry += sr.ReadLine();
+                            i++;
+                        }
+                        if ((i == 2 && currentEntry.Contains("MTC-CHK")) ||
+                            (i == 2 && currentEntry.Contains("MTF-CHK")))
+                        {
+                            skip = true;
+                            //bai = true;
+                            currentEntry += sr.ReadLine();
+                            currentEntry += sr.ReadLine();
+                            i++;
+                        }
+                    }
+                    if (currentEntry.StartsWith(" M"))
+                    {
+                        currentEntry = currentEntry.Remove(0, 17);
+
+                        currentEntry += sr.ReadLine();
+                    }
+                    if (currentEntry.StartsWith(" AIRLINE"))
+                    {
+                        currentEntry = currentEntry.Remove(0, 29);
+
+                        currentEntry += sr.ReadLine();
+                    }
+
+                    if (!skip)
+                    {
+                        if (currentEntry.StartsWith("4"))
+                        {
+                            //break it into variables
+                            string cardNum = currentEntry.Substring(0, 16);
+                            if (cardNum.Substring(0, 4) == "4855")
+                            {
+                                string account = "";
+                                string dateTime = "";
+                                string descTypCode = "";
+                                string amount = "";
+                                string merchID = "";
+                                string mcc = "";
+                                string location = "";
+                                string company = "";
+                                string cardstatus = "";
+                                try
+                                {
+                                    
+                                        account = currentEntry.Substring(143, 10).Trim();
+                                        dateTime = currentEntry.Substring(23, 12).Trim();
+                                        descTypCode = currentEntry.Substring(74, 10).Trim();
+                                        amount = currentEntry.Substring(91, 14).Trim();
+                                        merchID = currentEntry.Substring(386, 16).Trim();
+                                        mcc = currentEntry.Substring(408, 5).Trim();
+                                        location = currentEntry.Substring(205, 18).Trim();
+                                        company = currentEntry.Substring(224, 21).Trim();
+
+                                        if (company.Contains(","))
+                                        {
+                                            company = company.Replace(",", "");
+
+                                        }
+
+                                        if (amount.Contains(","))
+                                        {
+                                            amount = amount.Replace(",", "");
+
+                                        }
+                                        cardstatus = currentEntry.Substring(314, 42).Trim();
+                                        currentEntry = "";
+                                    
+
+                                    if (cardstatus.EndsWith("="))
+                                    {
+                                        cardstatus = cardstatus.Remove(cardstatus.Length - 1);
+                                        currentEntry = "";
+                                    }
+                                }
+                                catch (Exception)
+                                {
+                                    Console.WriteLine("Something went wrong with assigning variables");
+                                    currentEntry = "";
+                                }
+
+                                table.Rows.Add("=\"" + cardNum + "\"", "=\"" + account + "\"", "=\"" + dateTime + "\"", "=\"" + descTypCode + "\"",
+                                    "=\"" + amount + "\"", "=\"" + merchID + "\"", "=\"" + mcc + "\"", "=\"" + location + "\"", "=\"" + company + "\"",
+                                    "=\"" + cardstatus + "\"");
+                                currentEntry = "";
+                                bai = false;
+                            }
+                            else
+                            {
+                                currentEntry = "";
+                            }
+                        }
+                        else
+                        {
+                            currentEntry = "";
+                            //skip the 12 header lines
+                            for (int i = 0; i < 8; i++)
+                            {
+                                string tmp = sr.ReadLine();
+                            }
+                            currentEntry = "";
+                        }
+                    }
+                    else
+                    {
+                        currentEntry = "";
+                        skip = false;
+                    }
+                }
+            }
+
             return table;
         }
 
