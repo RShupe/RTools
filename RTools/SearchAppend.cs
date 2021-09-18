@@ -94,8 +94,8 @@ namespace RTools
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 //Get the path of specified file
-                path1 = openFileDialog.FileName;
-                path1Box.Text = openFileDialog.FileName;
+                path2 = openFileDialog.FileName;
+                path2Box.Text = openFileDialog.FileName;
             }
             checkParams();
         }
@@ -112,8 +112,8 @@ namespace RTools
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 //Get the path of specified file
-                path2 = openFileDialog.FileName;
-                path2Box.Text = openFileDialog.FileName;
+                path1 = openFileDialog.FileName;
+                path1Box.Text = openFileDialog.FileName;
             }
 
             checkParams();

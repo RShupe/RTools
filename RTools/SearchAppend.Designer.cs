@@ -102,7 +102,7 @@ namespace RTools
             this.path2Button.Name = "path2Button";
             this.path2Button.Size = new System.Drawing.Size(142, 29);
             this.path2Button.TabIndex = 1;
-            this.path2Button.Text = "Select Append File";
+            this.path2Button.Text = "Select Search File";
             this.path2Button.UseVisualStyleBackColor = false;
             this.path2Button.Click += new System.EventHandler(this.path2Button_Click_1);
             // 

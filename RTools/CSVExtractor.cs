@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -52,71 +53,72 @@ namespace RTools
                 {
                     string tmp = sr.ReadLine();
                 }
-
-                bool skip = false;
-
+                int entry = 0;
+                int nextEntry = 0;
                 while (sr.Peek() >= 0)
-                { 
-                    //get whole entry
-                    for(int i = 0; i < 4; i++)
-                    {
-                        currentEntry += sr.ReadLine();
-                        if (i==2 && currentEntry.Contains("WDL-CHK") || 
-                            i == 2 && currentEntry.Contains("INQ-SAV"))
-                        {
-                            skip = true;
-                            i++;
-                        }
-                        if ((i == 2 && currentEntry.Contains("INQ-CHK")))
-                        {
-                            skip = true;
+                {
 
-                            currentEntry += sr.ReadLine();
-                            i++;
-                        }
-                        if ((i == 2 && currentEntry.Contains("MTC-CHK")) ||
-                            (i == 2 && currentEntry.Contains("MTF-CHK")))
-                        {
-                            skip = true;
-                            //bai = true;
-                            currentEntry += sr.ReadLine();
-                            currentEntry += sr.ReadLine();
-                            i++;
-                        }
+                    char c;
+                    if (nextEntry > 0)
+                    {
+                        currentEntry += nextEntry;
+                        nextEntry = 0;
                     }
-                    if (currentEntry.StartsWith(" M"))
-                    {
-                        currentEntry = currentEntry.Remove(0, 17);
-
-                        currentEntry += sr.ReadLine();
-                    }
-                    if (currentEntry.StartsWith(" AIRLINE"))
-                    {
-                        currentEntry = currentEntry.Remove(0, 29);
-
-                        currentEntry += sr.ReadLine();
+                    else
+                    { 
+                        c = (char)sr.Read();
+                        currentEntry += c.ToString();
                     }
 
-                    if (!skip)
+
+                    if (currentEntry.StartsWith("485582"))
                     {
-                        if (currentEntry.StartsWith("4"))
+                        bool end = false;
+                        while (!end)
                         {
-                            //break it into variables
-                            string cardNum = currentEntry.Substring(0, 16);
-                            if (cardNum.Substring(0, 4) == "4855")
+                            c = (char)sr.Read();
+                            currentEntry += c.ToString();
+                            if (currentEntry.EndsWith("485582") || currentEntry.EndsWith("424447") || currentEntry.EndsWith("56851"))
                             {
-                                string account = "";
-                                string dateTime = "";
-                                string descTypCode = "";
-                                string amount = "";
-                                string merchID = "";
-                                string mcc = "";
-                                string location = "";
-                                string company = "";
-                                string cardstatus = "";
-                                try
+
+                                if (currentEntry.EndsWith("485582"))
                                 {
-                                    
+                                    nextEntry = 485582;
+                                }
+                                else if (currentEntry.EndsWith("42447"))
+                                {
+                                    nextEntry = 424447;
+                                }
+                                else
+                                {
+                                    nextEntry = 56851;
+                                }
+
+                                end = true;
+
+                                if (currentEntry.Contains("WDL-CHK") ||
+                                    currentEntry.Contains("INQ-SAV") ||
+                                    currentEntry.Contains("INQ-CHK") ||
+                                    currentEntry.Contains("MTC-CHK") ||
+                                    currentEntry.Contains("MTF-CHK"))
+                                {
+                                    currentEntry = "";
+                                }
+                                else
+                                {
+                                    string cardNum = currentEntry.Substring(0, 16);
+                                    string account = "";
+                                    string dateTime = "";
+                                    string descTypCode = "";
+                                    string amount = "";
+                                    string merchID = "";
+                                    string mcc = "";
+                                    string location = "";
+                                    string company = "";
+                                    string cardstatus = "";
+                                    try
+                                    {
+
                                         account = currentEntry.Substring(143, 10).Trim();
                                         dateTime = currentEntry.Substring(23, 12).Trim();
                                         descTypCode = currentEntry.Substring(74, 10).Trim();
@@ -139,47 +141,86 @@ namespace RTools
                                         }
                                         cardstatus = currentEntry.Substring(314, 42).Trim();
                                         currentEntry = "";
-                                    
 
-                                    if (cardstatus.EndsWith("="))
+
+                                        if (cardstatus.EndsWith("="))
+                                        {
+                                            cardstatus = cardstatus.Remove(cardstatus.Length - 1);
+                                            currentEntry = "";
+                                        }
+                                    }
+                                    catch (Exception)
                                     {
-                                        cardstatus = cardstatus.Remove(cardstatus.Length - 1);
+                                        Console.WriteLine("Something went wrong with assigning variables");
                                         currentEntry = "";
                                     }
-                                }
-                                catch (Exception)
-                                {
-                                    Console.WriteLine("Something went wrong with assigning variables");
+
+                                    table.Rows.Add("=\"" + cardNum + "\"", "=\"" + account + "\"", "=\"" + dateTime + "\"", "=\"" + descTypCode + "\"",
+                                        "=\"" + amount + "\"", "=\"" + merchID + "\"", "=\"" + mcc + "\"", "=\"" + location + "\"", "=\"" + company + "\"",
+                                        "=\"" + cardstatus + "\"");
                                     currentEntry = "";
                                 }
 
-                                table.Rows.Add("=\"" + cardNum + "\"", "=\"" + account + "\"", "=\"" + dateTime + "\"", "=\"" + descTypCode + "\"",
-                                    "=\"" + amount + "\"", "=\"" + merchID + "\"", "=\"" + mcc + "\"", "=\"" + location + "\"", "=\"" + company + "\"",
-                                    "=\"" + cardstatus + "\"");
+                            }
+                        }
+                    }
+                    else if (currentEntry.StartsWith("424447"))
+                    {
+                        bool end = false;
+                        while (!end)
+                        {
+                            c = (char)sr.Read();
+                            currentEntry += c.ToString();
+                            if (currentEntry.EndsWith("485582") || currentEntry.EndsWith("424447") || currentEntry.EndsWith("56851"))
+                            {
+                                if (currentEntry.EndsWith("485582"))
+                                {
+                                    nextEntry = 485582;
+                                }
+                                else if(currentEntry.EndsWith("42447"))
+                                {
+                                    nextEntry = 424447;
+                                }
+                                else
+                                {
+                                    nextEntry = 56851;
+                                }
+
+                                end = true;
                                 currentEntry = "";
-                                bai = false;
+                            }
+                        }
+                    }
+                    else if (currentEntry.StartsWith("56851")) 
+                    {  
+                        bool end = false;
+
+                    while (!end)
+                    {
+                        c = (char)sr.Read();
+                        currentEntry += c.ToString();
+                        if (currentEntry.EndsWith("485582") || currentEntry.EndsWith("424447") || currentEntry.EndsWith("56851"))
+                        {
+                            if (currentEntry.EndsWith("485582"))
+                            {
+                                nextEntry = 485582;
+                            }
+                            else if (currentEntry.EndsWith("42447"))
+                            {
+                                nextEntry = 424447;
                             }
                             else
                             {
-                                currentEntry = "";
+                                nextEntry = 56851;
                             }
-                        }
-                        else
-                        {
-                            currentEntry = "";
-                            //skip the 12 header lines
-                            for (int i = 0; i < 8; i++)
-                            {
-                                string tmp = sr.ReadLine();
-                            }
+
+                            end = true;
                             currentEntry = "";
                         }
                     }
-                    else
-                    {
-                        currentEntry = "";
-                        skip = false;
                     }
+
+
                 }
             }
 
