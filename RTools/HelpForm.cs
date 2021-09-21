@@ -1,14 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace RTools
 {
@@ -33,7 +24,7 @@ namespace RTools
                 "ex. rtools.exe tfj C:\\\\output.txt 5 N C:\\\\input1.txt C:\\input2.txt";
         }
 
-        
+
         private void button1_Click(object sender, EventArgs e)
         {
             richTextBox1.Text = "This program takes in a file and looks for a line with a keyword. \nThe program then takes the line out of the initial file and appends it to a new file." +
@@ -46,14 +37,14 @@ namespace RTools
         private void button3_Click(object sender, EventArgs e)
         {
             richTextBox1.Text = "This program is open source and available on GitHub at: https://github.com/RShupe/RTools" +
-                "\n\n Version 1.2.1.0";
+                "\n\n Version 1.2.1.1";
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             richTextBox1.Text = "This tool takes in a specific text file called a \"Cardholder Transaction Detail Report\"" +
-                "\n\nThis early version of the program detects debit card transations and exports them from the text file into a CSV Format." +
-                "\n\nFuture versions of this program will have more customizability on what it looks for and how it is formatted."+
+                "\n\nThis early version of the program detects debit card transactions and exports them from the text file into a CSV Format." +
+                "\n\nFuture versions of this program will have more customizability on what it looks for and how it is formatted." +
                 "\n\nThis program is open source and available on GitHub at: https://github.com/RShupe/RTools" +
                 "\n\n\n\n";
         }

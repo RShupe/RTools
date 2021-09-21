@@ -77,6 +77,10 @@ namespace RTools
                         bool end = false;
                         while (!end)
                         {
+                            if (sr.Peek() == -1)
+                            {
+                                break;
+                            }
                             c = (char)sr.Read();
                             currentEntry += c.ToString();
                             if (currentEntry.EndsWith("485582") || currentEntry.EndsWith("424447") || currentEntry.EndsWith("56851"))
@@ -169,13 +173,21 @@ namespace RTools
                                     {
                                         Console.WriteLine("Something went wrong with assigning variables");
                                         currentEntry = "";
+                                        if (sr.Peek() == -1)
+                                        {
+                                            break;
+                                        }
                                     }
 
                                     table.Rows.Add("=\"" + cardNum + "\"", "=\"" + account + "\"", "=\"" + dateTime + "\"", "=\"" + descTypCode + "\"",
                                         "=\"" + amount + "\"", "=\"" + merchID + "\"", "=\"" + mcc + "\"", "=\"" + location + "\"", "=\"" + company + "\"",
                                         "=\"" + cardstatus + "\"");
                                     currentEntry = "";
-                                    
+                                    if (sr.Peek() == -1)
+                                    {
+                                        break;
+                                    }
+
                                 }
 
                             }
@@ -186,6 +198,10 @@ namespace RTools
                         bool end = false;
                         while (!end)
                         {
+                            if (sr.Peek() == -1)
+                            {
+                                break;
+                            }
                             c = (char)sr.Read();
                             currentEntry += c.ToString();
                             if (currentEntry.EndsWith("485582") || currentEntry.EndsWith("424447") || currentEntry.EndsWith("56851"))
@@ -237,6 +253,10 @@ namespace RTools
 
                                 end = true;
                                 currentEntry = "";
+                                if (sr.Peek() == -1)
+                                {
+                                    break;
+                                }
                             }
                         }
                     }
