@@ -30,6 +30,8 @@ namespace RTools
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.path1Button = new System.Windows.Forms.Button();
             this.path2Box = new System.Windows.Forms.TextBox();
@@ -37,14 +39,17 @@ namespace RTools
             this.startButton = new System.Windows.Forms.Button();
             this.path1Box = new System.Windows.Forms.TextBox();
             this.path2Button = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.loadingLabel = new System.Windows.Forms.Label();
+            this.loadingCircle = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.loadingCircle)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(43)))), ((int)(((byte)(48)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.path1Button);
@@ -57,19 +62,45 @@ namespace RTools
             this.panel1.Size = new System.Drawing.Size(341, 354);
             this.panel1.TabIndex = 18;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(19, 138);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(128, 23);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "View Ignored Entries";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label1.Location = new System.Drawing.Point(16, 122);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(295, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "As of right now, this tool only detects and extracts debit cards\r\n";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(51)))), ((int)(((byte)(87)))));
-            this.label2.Location = new System.Drawing.Point(16, 11);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(15, 10);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 13);
+            this.label2.Size = new System.Drawing.Size(123, 20);
             this.label2.TabIndex = 16;
             this.label2.Text = "Export to CSV";
             // 
             // path1Button
             // 
-            this.path1Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(106)))), ((int)(((byte)(119)))));
+            this.path1Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.path1Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.path1Button.FlatAppearance.BorderSize = 0;
             this.path1Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -84,7 +115,7 @@ namespace RTools
             // 
             // path2Box
             // 
-            this.path2Box.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(106)))), ((int)(((byte)(119)))));
+            this.path2Box.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.path2Box.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.path2Box.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.path2Box.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -99,16 +130,18 @@ namespace RTools
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(63)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.panel2.Controls.Add(this.loadingCircle);
+            this.panel2.Controls.Add(this.loadingLabel);
             this.panel2.Controls.Add(this.startButton);
             this.panel2.Location = new System.Drawing.Point(0, 261);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(449, 92);
+            this.panel2.Size = new System.Drawing.Size(341, 92);
             this.panel2.TabIndex = 0;
             // 
             // startButton
             // 
-            this.startButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(106)))), ((int)(((byte)(119)))));
+            this.startButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
             this.startButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.startButton.FlatAppearance.BorderSize = 0;
             this.startButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -123,7 +156,7 @@ namespace RTools
             // 
             // path1Box
             // 
-            this.path1Box.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(106)))), ((int)(((byte)(119)))));
+            this.path1Box.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.path1Box.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.path1Box.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.path1Box.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -138,7 +171,7 @@ namespace RTools
             // 
             // path2Button
             // 
-            this.path2Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(106)))), ((int)(((byte)(119)))));
+            this.path2Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.path2Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.path2Button.FlatAppearance.BorderSize = 0;
             this.path2Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -151,15 +184,25 @@ namespace RTools
             this.path2Button.UseVisualStyleBackColor = false;
             this.path2Button.Click += new System.EventHandler(this.path2Button_Click);
             // 
-            // label1
+            // loadingLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.IndianRed;
-            this.label1.Location = new System.Drawing.Point(28, 134);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(295, 13);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "As of right now, this tool only detects and extracts debit cards";
+            this.loadingLabel.AutoSize = true;
+            this.loadingLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.loadingLabel.Location = new System.Drawing.Point(13, 65);
+            this.loadingLabel.Name = "loadingLabel";
+            this.loadingLabel.Size = new System.Drawing.Size(0, 13);
+            this.loadingLabel.TabIndex = 6;
+            // 
+            // loadingCircle
+            // 
+            this.loadingCircle.Image = global::RTools.Properties.Resources.ajax_loader_1_;
+            this.loadingCircle.Location = new System.Drawing.Point(162, 65);
+            this.loadingCircle.Name = "loadingCircle";
+            this.loadingCircle.Size = new System.Drawing.Size(100, 50);
+            this.loadingCircle.TabIndex = 19;
+            this.loadingCircle.TabStop = false;
+            this.loadingCircle.Visible = false;
+            this.loadingCircle.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // CSVExtractor
             // 
@@ -173,6 +216,8 @@ namespace RTools
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.loadingCircle)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -188,5 +233,8 @@ namespace RTools
         private System.Windows.Forms.TextBox path1Box;
         private System.Windows.Forms.Button path2Button;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label loadingLabel;
+        private System.Windows.Forms.PictureBox loadingCircle;
     }
 }

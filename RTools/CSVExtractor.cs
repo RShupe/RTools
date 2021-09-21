@@ -46,14 +46,15 @@ namespace RTools
             using (StreamReader sr = new StreamReader(path1))
             {
                 string currentEntry = "";
-                bool bai = false;
+                int entries = 1;
+                
 
                 //skip the 12 header lines
                 for (int i = 0; i < 11; i++)
                 {
                     string tmp = sr.ReadLine();
                 }
-                int entry = 0;
+                
                 int nextEntry = 0;
                 while (sr.Peek() >= 0)
                 {
@@ -100,6 +101,10 @@ namespace RTools
                                     currentEntry.Contains("INQ-SAV") ||
                                     currentEntry.Contains("INQ-CHK") ||
                                     currentEntry.Contains("MTC-CHK") ||
+                                    currentEntry.Contains("WDL-CCR") ||
+                                    currentEntry.Contains("WDL-SAV") ||
+                                    currentEntry.Contains("INQ-CCR") ||
+                                    currentEntry.Contains("TFR-CHK") ||
                                     currentEntry.Contains("MTF-CHK"))
                                 {
                                     currentEntry = "";
@@ -119,18 +124,29 @@ namespace RTools
                                     try
                                     {
 
-                                        account = currentEntry.Substring(143, 10).Trim();
+                                        account = currentEntry.Substring(145, 10).Trim();
                                         dateTime = currentEntry.Substring(23, 12).Trim();
                                         descTypCode = currentEntry.Substring(74, 10).Trim();
                                         amount = currentEntry.Substring(91, 14).Trim();
-                                        merchID = currentEntry.Substring(386, 16).Trim();
-                                        mcc = currentEntry.Substring(408, 5).Trim();
-                                        location = currentEntry.Substring(205, 18).Trim();
+                                        merchID = currentEntry.Substring(392, 16).Trim();
+                                        mcc = currentEntry.Substring(415, 5).Trim();
+
+                                        if (mcc.EndsWith("P"))
+                                        {
+                                            mcc = currentEntry.Substring(413, 5).Trim();
+                                        }
+
+                                        location = currentEntry.Substring(207, 18).Trim();
                                         company = currentEntry.Substring(224, 21).Trim();
 
                                         if (company.Contains(","))
                                         {
                                             company = company.Replace(",", "");
+
+                                        }
+                                        if (location.Contains(","))
+                                        {
+                                            location = location.Replace(",", "");
 
                                         }
 
@@ -139,7 +155,7 @@ namespace RTools
                                             amount = amount.Replace(",", "");
 
                                         }
-                                        cardstatus = currentEntry.Substring(314, 42).Trim();
+                                        cardstatus = currentEntry.Substring(314, 41).Trim();
                                         currentEntry = "";
 
 
@@ -159,6 +175,7 @@ namespace RTools
                                         "=\"" + amount + "\"", "=\"" + merchID + "\"", "=\"" + mcc + "\"", "=\"" + location + "\"", "=\"" + company + "\"",
                                         "=\"" + cardstatus + "\"");
                                     currentEntry = "";
+                                    
                                 }
 
                             }
@@ -177,7 +194,7 @@ namespace RTools
                                 {
                                     nextEntry = 485582;
                                 }
-                                else if(currentEntry.EndsWith("42447"))
+                                else if (currentEntry.EndsWith("42447"))
                                 {
                                     nextEntry = 424447;
                                 }
@@ -191,33 +208,37 @@ namespace RTools
                             }
                         }
                     }
-                    else if (currentEntry.StartsWith("56851")) 
-                    {  
+                    else if (currentEntry.StartsWith("56851"))
+                    {
                         bool end = false;
 
-                    while (!end)
-                    {
-                        c = (char)sr.Read();
-                        currentEntry += c.ToString();
-                        if (currentEntry.EndsWith("485582") || currentEntry.EndsWith("424447") || currentEntry.EndsWith("56851"))
+                        while (!end)
                         {
-                            if (currentEntry.EndsWith("485582"))
+                            if(sr.Peek() == -1)
                             {
-                                nextEntry = 485582;
+                                break;
                             }
-                            else if (currentEntry.EndsWith("42447"))
+                            c = (char)sr.Read();
+                            currentEntry += c.ToString();
+                            if (currentEntry.EndsWith("485582") || currentEntry.EndsWith("424447") || currentEntry.EndsWith("56851"))
                             {
-                                nextEntry = 424447;
-                            }
-                            else
-                            {
-                                nextEntry = 56851;
-                            }
+                                if (currentEntry.EndsWith("485582"))
+                                {
+                                    nextEntry = 485582;
+                                }
+                                else if (currentEntry.EndsWith("42447"))
+                                {
+                                    nextEntry = 424447;
+                                }
+                                else
+                                {
+                                    nextEntry = 56851;
+                                }
 
-                            end = true;
-                            currentEntry = "";
+                                end = true;
+                                currentEntry = "";
+                            }
                         }
-                    }
                     }
 
 
@@ -239,11 +260,24 @@ namespace RTools
             }
         }
 
-        private void startButton_Click(object sender, EventArgs e)
+        private async void startButton_Click(object sender, EventArgs e)
         {
-            System.Data.DataTable table = CreateTable();
-            table.ToCSV(path2);
+            await ImportAsync();
+        }
+
+        private async Task ImportAsync()
+        {
+            loadingCircle.Visible = true;
+            startButton.Enabled = false;
+            await Task.Run(() =>
+            {
+                System.Data.DataTable table = CreateTable();
+                table.ToCSV(path2);
+            });
+
             MessageBox.Show("Done!");
+            startButton.Enabled = true;
+            loadingCircle.Visible = false;
         }
 
         private void path1Button_Click(object sender, EventArgs e)
@@ -280,6 +314,16 @@ namespace RTools
                 path2Box.Text = openFileDialog.FileName;
             }
             checkParams();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("INQ-SAV\nINQ-CHK\nINQ-CCR\n\nWDL-CCR\nWDL-SAV\nWDL-CHK\n\nTFR-CHK\nMTC-CHK\nMTF-CHK");
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

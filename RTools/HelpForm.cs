@@ -46,12 +46,12 @@ namespace RTools
         private void button3_Click(object sender, EventArgs e)
         {
             richTextBox1.Text = "This program is open source and available on GitHub at: https://github.com/RShupe/RTools" +
-                "\n\n Version 1.1.1.0";
+                "\n\n Version 1.2.1.0";
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            richTextBox1.Text = "This tool takes in a specific text file called a \"Cardholder Transation Detail Report\"" +
+            richTextBox1.Text = "This tool takes in a specific text file called a \"Cardholder Transaction Detail Report\"" +
                 "\n\nThis early version of the program detects debit card transations and exports them from the text file into a CSV Format." +
                 "\n\nFuture versions of this program will have more customizability on what it looks for and how it is formatted."+
                 "\n\nThis program is open source and available on GitHub at: https://github.com/RShupe/RTools" +

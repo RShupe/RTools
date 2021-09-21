@@ -3,7 +3,11 @@ C:\Users\ryant\Documents\GitHub\RTools\RTools\bin\Debug\RTools.exe.manifest
 C:\Users\ryant\Documents\GitHub\RTools\RTools\bin\Debug\RTools.application
 C:\Users\ryant\Documents\GitHub\RTools\RTools\bin\Debug\RTools.exe
 C:\Users\ryant\Documents\GitHub\RTools\RTools\bin\Debug\RTools.pdb
+C:\Users\ryant\Documents\GitHub\RTools\RTools\obj\Debug\RTools.csproj.AssemblyReference.cache
+C:\Users\ryant\Documents\GitHub\RTools\RTools\obj\Debug\RTools.csproj.SuggestedBindingRedirects.cache
+C:\Users\ryant\Documents\GitHub\RTools\RTools\obj\Debug\RTools.csproj.ResolveComReference.cache
 C:\Users\ryant\Documents\GitHub\RTools\RTools\obj\Debug\RTools.AddList.resources
+C:\Users\ryant\Documents\GitHub\RTools\RTools\obj\Debug\RTools.CSVExtractor.resources
 C:\Users\ryant\Documents\GitHub\RTools\RTools\obj\Debug\RTools.Form1.resources
 C:\Users\ryant\Documents\GitHub\RTools\RTools\obj\Debug\RTools.HelpForm.resources
 C:\Users\ryant\Documents\GitHub\RTools\RTools\obj\Debug\RTools.Properties.Resources.resources
@@ -15,6 +19,3 @@ C:\Users\ryant\Documents\GitHub\RTools\RTools\obj\Debug\RTools.exe.manifest
 C:\Users\ryant\Documents\GitHub\RTools\RTools\obj\Debug\RTools.application
 C:\Users\ryant\Documents\GitHub\RTools\RTools\obj\Debug\RTools.exe
 C:\Users\ryant\Documents\GitHub\RTools\RTools\obj\Debug\RTools.pdb
-C:\Users\ryant\Documents\GitHub\RTools\RTools\obj\Debug\RTools.csproj.AssemblyReference.cache
-C:\Users\ryant\Documents\GitHub\RTools\RTools\obj\Debug\RTools.csproj.ResolveComReference.cache
-C:\Users\ryant\Documents\GitHub\RTools\RTools\obj\Debug\RTools.CSVExtractor.resources

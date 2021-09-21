@@ -36,5 +36,10 @@ namespace RTools
         {
 
         }
+
+        private void AddList_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

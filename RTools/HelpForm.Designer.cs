@@ -56,7 +56,7 @@ namespace RTools
             // 
             // panelSideMenu
             // 
-            this.panelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(36)))));
+            this.panelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.panelSideMenu.Controls.Add(this.button4);
             this.panelSideMenu.Controls.Add(this.button3);
             this.panelSideMenu.Controls.Add(this.button2);
@@ -71,7 +71,7 @@ namespace RTools
             // 
             // childFormPanel
             // 
-            this.childFormPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(43)))), ((int)(((byte)(48)))));
+            this.childFormPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.childFormPanel.Controls.Add(this.richTextBox1);
             this.childFormPanel.Location = new System.Drawing.Point(250, 0);
             this.childFormPanel.Name = "childFormPanel";
@@ -80,7 +80,7 @@ namespace RTools
             // 
             // richTextBox1
             // 
-            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(86)))));
+            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -93,7 +93,7 @@ namespace RTools
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(36)))));
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.Dock = System.Windows.Forms.DockStyle.Top;
             this.button4.FlatAppearance.BorderSize = 0;
@@ -160,7 +160,7 @@ namespace RTools
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(36)))));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Dock = System.Windows.Forms.DockStyle.Top;
             this.button1.FlatAppearance.BorderSize = 0;
@@ -168,7 +168,7 @@ namespace RTools
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Image = global::RTools.Properties.Resources.search1;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(0, 143);
             this.button1.Name = "button1";
@@ -183,7 +183,7 @@ namespace RTools
             // 
             // btnTextFileJoiner
             // 
-            this.btnTextFileJoiner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(36)))));
+            this.btnTextFileJoiner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.btnTextFileJoiner.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTextFileJoiner.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnTextFileJoiner.FlatAppearance.BorderSize = 0;
@@ -191,7 +191,7 @@ namespace RTools
             this.btnTextFileJoiner.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTextFileJoiner.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTextFileJoiner.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnTextFileJoiner.Image = ((System.Drawing.Image)(resources.GetObject("btnTextFileJoiner.Image")));
+            this.btnTextFileJoiner.Image = global::RTools.Properties.Resources.textfilejoiner1;
             this.btnTextFileJoiner.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTextFileJoiner.Location = new System.Drawing.Point(0, 98);
             this.btnTextFileJoiner.Name = "btnTextFileJoiner";

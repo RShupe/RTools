@@ -18,7 +18,7 @@ namespace RTools
         {
             InitializeComponent();
 
-            const string currentVersion = "1.1.1.0";
+            const string currentVersion = "1.2.1.0";
 
             var webRequest = WebRequest.Create(@"https://github.com/RShupe/RTools/raw/main/currentreleaseversion.txt");
             string strContent= "";

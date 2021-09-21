@@ -31,6 +31,7 @@ namespace RTools
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panelSideMenu = new System.Windows.Forms.Panel();
+            this.childFormPanel = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -38,14 +39,13 @@ namespace RTools
             this.btnTextFileJoiner = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.childFormPanel = new System.Windows.Forms.Panel();
             this.panelSideMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelSideMenu
             // 
-            this.panelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(36)))));
+            this.panelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.panelSideMenu.Controls.Add(this.button4);
             this.panelSideMenu.Controls.Add(this.button3);
             this.panelSideMenu.Controls.Add(this.button2);
@@ -58,9 +58,17 @@ namespace RTools
             this.panelSideMenu.Size = new System.Drawing.Size(250, 417);
             this.panelSideMenu.TabIndex = 0;
             // 
+            // childFormPanel
+            // 
+            this.childFormPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.childFormPanel.Location = new System.Drawing.Point(250, 0);
+            this.childFormPanel.Name = "childFormPanel";
+            this.childFormPanel.Size = new System.Drawing.Size(448, 417);
+            this.childFormPanel.TabIndex = 1;
+            // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(36)))));
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.Dock = System.Windows.Forms.DockStyle.Top;
             this.button4.FlatAppearance.BorderSize = 0;
@@ -124,7 +132,7 @@ namespace RTools
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(36)))));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Dock = System.Windows.Forms.DockStyle.Top;
             this.button1.FlatAppearance.BorderSize = 0;
@@ -146,7 +154,7 @@ namespace RTools
             // 
             // btnTextFileJoiner
             // 
-            this.btnTextFileJoiner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(36)))));
+            this.btnTextFileJoiner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.btnTextFileJoiner.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTextFileJoiner.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnTextFileJoiner.FlatAppearance.BorderSize = 0;
@@ -184,14 +192,6 @@ namespace RTools
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(478, 442);
             this.panel1.TabIndex = 1;
-            // 
-            // childFormPanel
-            // 
-            this.childFormPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(43)))), ((int)(((byte)(48)))));
-            this.childFormPanel.Location = new System.Drawing.Point(250, 0);
-            this.childFormPanel.Name = "childFormPanel";
-            this.childFormPanel.Size = new System.Drawing.Size(448, 417);
-            this.childFormPanel.TabIndex = 1;
             // 
             // Form1
             // 
