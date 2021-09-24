@@ -83,7 +83,7 @@ namespace RTools
                             }
                             c = (char)sr.Read();
                             currentEntry += c.ToString();
-                            if (currentEntry.EndsWith("485582") || currentEntry.EndsWith("424447") || currentEntry.EndsWith("56851"))
+                            if (currentEntry.EndsWith("485582") || currentEntry.EndsWith("424447") || currentEntry.EndsWith("568513"))
                             {
 
                                 if (currentEntry.EndsWith("485582"))
@@ -96,7 +96,7 @@ namespace RTools
                                 }
                                 else
                                 {
-                                    nextEntry = 56851;
+                                    nextEntry = 568513;
                                 }
 
                                 end = true;
@@ -204,7 +204,7 @@ namespace RTools
                             }
                             c = (char)sr.Read();
                             currentEntry += c.ToString();
-                            if (currentEntry.EndsWith("485582") || currentEntry.EndsWith("424447") || currentEntry.EndsWith("56851"))
+                            if (currentEntry.EndsWith("485582") || currentEntry.EndsWith("424447") || currentEntry.EndsWith("568513"))
                             {
                                 if (currentEntry.EndsWith("485582"))
                                 {
@@ -216,7 +216,7 @@ namespace RTools
                                 }
                                 else
                                 {
-                                    nextEntry = 56851;
+                                    nextEntry = 568513;
                                 }
 
                                 end = true;
@@ -224,7 +224,7 @@ namespace RTools
                             }
                         }
                     }
-                    else if (currentEntry.StartsWith("56851"))
+                    else if (currentEntry.StartsWith("568513"))
                     {
                         bool end = false;
 
@@ -236,7 +236,7 @@ namespace RTools
                             }
                             c = (char)sr.Read();
                             currentEntry += c.ToString();
-                            if (currentEntry.EndsWith("485582") || currentEntry.EndsWith("424447") || currentEntry.EndsWith("56851"))
+                            if (currentEntry.EndsWith("485582") || currentEntry.EndsWith("424447") || currentEntry.EndsWith("568513"))
                             {
                                 if (currentEntry.EndsWith("485582"))
                                 {
@@ -248,7 +248,7 @@ namespace RTools
                                 }
                                 else
                                 {
-                                    nextEntry = 56851;
+                                    nextEntry = 568513;
                                 }
 
                                 end = true;
@@ -295,9 +295,9 @@ namespace RTools
                 table.ToCSV(path2);
             });
 
-            MessageBox.Show("Done!");
             startButton.Enabled = true;
             loadingCircle.Visible = false;
+            MessageBox.Show("Done!\n\nFile saved as: output.csv");
         }
 
         private void path1Button_Click(object sender, EventArgs e)
@@ -320,18 +320,19 @@ namespace RTools
 
         private void path2Button_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-
-            openFileDialog.InitialDirectory = "c:\\";
-            openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
-            openFileDialog.FilterIndex = 2;
-            openFileDialog.RestoreDirectory = true;
-
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            FolderBrowserDialog folderDlg = new FolderBrowserDialog();
+            folderDlg.ShowNewFolderButton = true;
+            // Show the FolderBrowserDialog.  
+            DialogResult result = folderDlg.ShowDialog();
+            if (result == DialogResult.OK)
             {
-                //Get the path of specified file
-                path2 = openFileDialog.FileName;
-                path2Box.Text = openFileDialog.FileName;
+                path2 = folderDlg.SelectedPath;
+                path2Box.Text = folderDlg.SelectedPath;
+
+                Environment.SpecialFolder root = folderDlg.RootFolder;
+
+
+                path2 += "\\output.csv";
             }
             checkParams();
         }

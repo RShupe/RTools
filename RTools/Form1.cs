@@ -18,7 +18,7 @@ namespace RTools
         {
             InitializeComponent();
 
-            const string currentVersion = "1.2.1.1";
+            const string currentVersion = "1.2.1.2";
 
             var webRequest = WebRequest.Create(@"https://github.com/RShupe/RTools/raw/main/currentreleaseversion.txt");
             string strContent= "";
@@ -34,6 +34,7 @@ namespace RTools
                 if (dialogResult == DialogResult.Yes)
                 {
                     System.Diagnostics.Process.Start("https://github.com/RShupe/RTools/releases");
+                    Application.Exit();
                 }
                 else if (dialogResult == DialogResult.No)
                 {

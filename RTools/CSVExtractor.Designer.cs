@@ -36,11 +36,13 @@ namespace RTools
             this.path1Button = new System.Windows.Forms.Button();
             this.path2Box = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.loadingCircle = new System.Windows.Forms.PictureBox();
+            this.loadingLabel = new System.Windows.Forms.Label();
             this.startButton = new System.Windows.Forms.Button();
             this.path1Box = new System.Windows.Forms.TextBox();
             this.path2Button = new System.Windows.Forms.Button();
-            this.loadingLabel = new System.Windows.Forms.Label();
-            this.loadingCircle = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.loadingCircle)).BeginInit();
@@ -49,6 +51,8 @@ namespace RTools
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
@@ -69,7 +73,7 @@ namespace RTools
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(19, 138);
+            this.button1.Location = new System.Drawing.Point(19, 148);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(128, 23);
             this.button1.TabIndex = 18;
@@ -81,7 +85,7 @@ namespace RTools
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(16, 122);
+            this.label1.Location = new System.Drawing.Point(16, 132);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(295, 13);
             this.label1.TabIndex = 17;
@@ -109,7 +113,7 @@ namespace RTools
             this.path1Button.Name = "path1Button";
             this.path1Button.Size = new System.Drawing.Size(142, 29);
             this.path1Button.TabIndex = 1;
-            this.path1Button.Text = "Select Text File";
+            this.path1Button.Text = "Select Text File Path";
             this.path1Button.UseVisualStyleBackColor = false;
             this.path1Button.Click += new System.EventHandler(this.path1Button_Click);
             // 
@@ -120,13 +124,13 @@ namespace RTools
             this.path2Box.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.path2Box.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.path2Box.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.path2Box.Location = new System.Drawing.Point(19, 178);
+            this.path2Box.Location = new System.Drawing.Point(19, 198);
             this.path2Box.Name = "path2Box";
             this.path2Box.ReadOnly = true;
             this.path2Box.Size = new System.Drawing.Size(310, 22);
             this.path2Box.TabIndex = 14;
             this.path2Box.TabStop = false;
-            this.path2Box.Text = "Output file directory";
+            this.path2Box.Text = "CSV File Path";
             // 
             // panel2
             // 
@@ -138,6 +142,26 @@ namespace RTools
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(341, 92);
             this.panel2.TabIndex = 0;
+            // 
+            // loadingCircle
+            // 
+            this.loadingCircle.Image = global::RTools.Properties.Resources.ajax_loader_1_;
+            this.loadingCircle.Location = new System.Drawing.Point(156, 64);
+            this.loadingCircle.Name = "loadingCircle";
+            this.loadingCircle.Size = new System.Drawing.Size(21, 24);
+            this.loadingCircle.TabIndex = 19;
+            this.loadingCircle.TabStop = false;
+            this.loadingCircle.Visible = false;
+            this.loadingCircle.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // loadingLabel
+            // 
+            this.loadingLabel.AutoSize = true;
+            this.loadingLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.loadingLabel.Location = new System.Drawing.Point(13, 65);
+            this.loadingLabel.Name = "loadingLabel";
+            this.loadingLabel.Size = new System.Drawing.Size(0, 13);
+            this.loadingLabel.TabIndex = 6;
             // 
             // startButton
             // 
@@ -167,7 +191,7 @@ namespace RTools
             this.path1Box.Size = new System.Drawing.Size(310, 23);
             this.path1Box.TabIndex = 12;
             this.path1Box.TabStop = false;
-            this.path1Box.Text = "Input file directory";
+            this.path1Box.Text = "Transaction Report TXT Path\r\n";
             // 
             // path2Button
             // 
@@ -176,33 +200,33 @@ namespace RTools
             this.path2Button.FlatAppearance.BorderSize = 0;
             this.path2Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.path2Button.ForeColor = System.Drawing.Color.White;
-            this.path2Button.Location = new System.Drawing.Point(19, 206);
+            this.path2Button.Location = new System.Drawing.Point(19, 226);
             this.path2Button.Name = "path2Button";
             this.path2Button.Size = new System.Drawing.Size(142, 29);
             this.path2Button.TabIndex = 4;
-            this.path2Button.Text = "CSV File Path";
+            this.path2Button.Text = "Select CSV File Path";
             this.path2Button.UseVisualStyleBackColor = false;
             this.path2Button.Click += new System.EventHandler(this.path2Button_Click);
             // 
-            // loadingLabel
+            // label3
             // 
-            this.loadingLabel.AutoSize = true;
-            this.loadingLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.loadingLabel.Location = new System.Drawing.Point(13, 65);
-            this.loadingLabel.Name = "loadingLabel";
-            this.loadingLabel.Size = new System.Drawing.Size(0, 13);
-            this.loadingLabel.TabIndex = 6;
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.SystemColors.Control;
+            this.label3.Location = new System.Drawing.Point(16, 34);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(176, 13);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Select the transaction report text file";
             // 
-            // loadingCircle
+            // label4
             // 
-            this.loadingCircle.Image = global::RTools.Properties.Resources.ajax_loader_1_;
-            this.loadingCircle.Location = new System.Drawing.Point(162, 65);
-            this.loadingCircle.Name = "loadingCircle";
-            this.loadingCircle.Size = new System.Drawing.Size(100, 50);
-            this.loadingCircle.TabIndex = 19;
-            this.loadingCircle.TabStop = false;
-            this.loadingCircle.Visible = false;
-            this.loadingCircle.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.SystemColors.Control;
+            this.label4.Location = new System.Drawing.Point(16, 182);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(219, 13);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "Select folder where output file is to be placed";
             // 
             // CSVExtractor
             // 
@@ -236,5 +260,7 @@ namespace RTools
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label loadingLabel;
         private System.Windows.Forms.PictureBox loadingCircle;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
     }
 }
