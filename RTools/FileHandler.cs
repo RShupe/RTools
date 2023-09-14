@@ -112,7 +112,7 @@ namespace RTools
             fileNames.Clear();
 
             OpenFileDialog OpenDlg = new OpenFileDialog();
-            OpenDlg.Filter = "text files|*.txt;*.text";
+            //OpenDlg.Filter = "text files|*.txt;*.text";
             OpenDlg.Multiselect = true;
             OpenDlg.InitialDirectory = Application.StartupPath;
             OpenDlg.Title = "Select text files you wish to combine.";

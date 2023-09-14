@@ -37,7 +37,7 @@ namespace RTools
         private void button3_Click(object sender, EventArgs e)
         {
             richTextBox1.Text = "This program is open source and available on GitHub at: https://github.com/RShupe/RTools" +
-                "\n\n Version 1.2.1.2";
+                "\n\n Version 1.2.2";
         }
 
         private void button4_Click(object sender, EventArgs e)
