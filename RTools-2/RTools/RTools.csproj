@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{340E1955-938A-4FC7-9BF4-5EB5509BA18B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>RTools</RootNamespace>
+    <AssemblyName>RTools</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <LangVersion>12.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <Deterministic>true</Deterministic>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+    <ApplicationIcon>Assets\hammericon.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <StartupObject>RTools.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="Accessibility" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\BulkRename.cs" />
+    <Compile Include="Core\Comparison.cs" />
+    <Compile Include="Core\Compat.cs" />
+    <Compile Include="Core\CsvWorkbench.cs" />
+    <Compile Include="Core\DiagnosticTools.cs" />
+    <Compile Include="Core\FileTools.cs" />
+    <Compile Include="Core\FolderAnalyzer.cs" />
+    <Compile Include="Core\ReportExtractor.cs" />
+    <Compile Include="GlobalUsings.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainFormRuntime.cs"><SubType>Code</SubType></Compile>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\ModernUi.cs" />
+    <Compile Include="UI\ContentLayout.cs"><SubType>Code</SubType></Compile>
+    <Compile Include="UI\ModernChoice.cs"><SubType>Code</SubType></Compile>
+    <Compile Include="UI\ModernScrollHost.cs"><SubType>Code</SubType></Compile>
+    <Compile Include="UI\ModernInputs.cs"><SubType>Code</SubType></Compile>
+    <Compile Include="UI\ModernButton.cs"><SubType>Code</SubType></Compile>
+    <Compile Include="UI\ShellButtonStyle.cs"><SubType>Code</SubType></Compile>
+    <Compile Include="UI\DesignerPageRuntime.cs"><SubType>Code</SubType></Compile>
+    <Compile Include="UI\Pages\AboutHelpPage.cs"><SubType>UserControl</SubType></Compile>
+    <Compile Include="UI\Pages\AboutHelpPage.Runtime.cs"><DependentUpon>AboutHelpPage.cs</DependentUpon><SubType>Code</SubType></Compile>
+    <Compile Include="UI\Pages\AboutHelpPage.Designer.cs"><DependentUpon>AboutHelpPage.cs</DependentUpon></Compile>
+    <EmbeddedResource Include="UI\Pages\AboutHelpPage.resx"><DependentUpon>AboutHelpPage.cs</DependentUpon><SubType>Designer</SubType></EmbeddedResource>
+    <Compile Include="UI\Pages\BulkRenamerPage.cs"><SubType>UserControl</SubType></Compile>
+    <Compile Include="UI\Pages\BulkRenamerPage.Runtime.cs"><DependentUpon>BulkRenamerPage.cs</DependentUpon><SubType>Code</SubType></Compile>
+    <Compile Include="UI\Pages\BulkRenamerPage.Designer.cs"><DependentUpon>BulkRenamerPage.cs</DependentUpon></Compile>
+    <EmbeddedResource Include="UI\Pages\BulkRenamerPage.resx"><DependentUpon>BulkRenamerPage.cs</DependentUpon><SubType>Designer</SubType></EmbeddedResource>
+    <Compile Include="UI\Pages\ColorPickerPage.cs"><SubType>UserControl</SubType></Compile>
+    <Compile Include="UI\Pages\ColorPickerPage.Runtime.cs"><DependentUpon>ColorPickerPage.cs</DependentUpon><SubType>Code</SubType></Compile>
+    <Compile Include="UI\Pages\ColorPickerPage.Designer.cs"><DependentUpon>ColorPickerPage.cs</DependentUpon></Compile>
+    <EmbeddedResource Include="UI\Pages\ColorPickerPage.resx"><DependentUpon>ColorPickerPage.cs</DependentUpon><SubType>Designer</SubType></EmbeddedResource>
+    <Compile Include="UI\Pages\CsvWorkbenchPage.cs"><SubType>UserControl</SubType></Compile>
+    <Compile Include="UI\Pages\CsvWorkbenchPage.Runtime.cs"><DependentUpon>CsvWorkbenchPage.cs</DependentUpon><SubType>Code</SubType></Compile>
+    <Compile Include="UI\Pages\CsvWorkbenchPage.Designer.cs"><DependentUpon>CsvWorkbenchPage.cs</DependentUpon></Compile>
+    <EmbeddedResource Include="UI\Pages\CsvWorkbenchPage.resx"><DependentUpon>CsvWorkbenchPage.cs</DependentUpon><SubType>Designer</SubType></EmbeddedResource>
+    <Compile Include="UI\Pages\FileComparisonPage.cs"><SubType>UserControl</SubType></Compile>
+    <Compile Include="UI\Pages\FileComparisonPage.Runtime.cs"><DependentUpon>FileComparisonPage.cs</DependentUpon><SubType>Code</SubType></Compile>
+    <Compile Include="UI\Pages\FileComparisonPage.Designer.cs"><DependentUpon>FileComparisonPage.cs</DependentUpon></Compile>
+    <EmbeddedResource Include="UI\Pages\FileComparisonPage.resx"><DependentUpon>FileComparisonPage.cs</DependentUpon><SubType>Designer</SubType></EmbeddedResource>
+    <Compile Include="UI\Pages\FolderAnalyzerPage.cs"><SubType>UserControl</SubType></Compile>
+    <Compile Include="UI\Pages\FolderAnalyzerPage.Runtime.cs"><DependentUpon>FolderAnalyzerPage.cs</DependentUpon><SubType>Code</SubType></Compile>
+    <Compile Include="UI\Pages\FolderAnalyzerPage.Designer.cs"><DependentUpon>FolderAnalyzerPage.cs</DependentUpon></Compile>
+    <EmbeddedResource Include="UI\Pages\FolderAnalyzerPage.resx"><DependentUpon>FolderAnalyzerPage.cs</DependentUpon><SubType>Designer</SubType></EmbeddedResource>
+    <Compile Include="UI\Pages\LogViewerPage.cs"><SubType>UserControl</SubType></Compile>
+    <Compile Include="UI\Pages\LogViewerPage.Runtime.cs"><DependentUpon>LogViewerPage.cs</DependentUpon><SubType>Code</SubType></Compile>
+    <Compile Include="UI\Pages\LogViewerPage.Designer.cs"><DependentUpon>LogViewerPage.cs</DependentUpon></Compile>
+    <EmbeddedResource Include="UI\Pages\LogViewerPage.resx"><DependentUpon>LogViewerPage.cs</DependentUpon><SubType>Designer</SubType></EmbeddedResource>
+    <Compile Include="UI\Pages\RegexTesterPage.cs"><SubType>UserControl</SubType></Compile>
+    <Compile Include="UI\Pages\RegexTesterPage.Runtime.cs"><DependentUpon>RegexTesterPage.cs</DependentUpon><SubType>Code</SubType></Compile>
+    <Compile Include="UI\Pages\RegexTesterPage.Designer.cs"><DependentUpon>RegexTesterPage.cs</DependentUpon></Compile>
+    <EmbeddedResource Include="UI\Pages\RegexTesterPage.resx"><DependentUpon>RegexTesterPage.cs</DependentUpon><SubType>Designer</SubType></EmbeddedResource>
+    <Compile Include="UI\Pages\ReportToCsvPage.cs"><SubType>UserControl</SubType></Compile>
+    <Compile Include="UI\Pages\ReportToCsvPage.Runtime.cs"><DependentUpon>ReportToCsvPage.cs</DependentUpon><SubType>Code</SubType></Compile>
+    <Compile Include="UI\Pages\ReportToCsvPage.Designer.cs"><DependentUpon>ReportToCsvPage.cs</DependentUpon></Compile>
+    <EmbeddedResource Include="UI\Pages\ReportToCsvPage.resx"><DependentUpon>ReportToCsvPage.cs</DependentUpon><SubType>Designer</SubType></EmbeddedResource>
+    <Compile Include="UI\Pages\SearchAppendPage.cs"><SubType>UserControl</SubType></Compile>
+    <Compile Include="UI\Pages\SearchAppendPage.Runtime.cs"><DependentUpon>SearchAppendPage.cs</DependentUpon><SubType>Code</SubType></Compile>
+    <Compile Include="UI\Pages\SearchAppendPage.Designer.cs"><DependentUpon>SearchAppendPage.cs</DependentUpon></Compile>
+    <EmbeddedResource Include="UI\Pages\SearchAppendPage.resx"><DependentUpon>SearchAppendPage.cs</DependentUpon><SubType>Designer</SubType></EmbeddedResource>
+    <Compile Include="UI\Pages\SubnetCalculatorPage.cs"><SubType>UserControl</SubType></Compile>
+    <Compile Include="UI\Pages\SubnetCalculatorPage.Runtime.cs"><DependentUpon>SubnetCalculatorPage.cs</DependentUpon><SubType>Code</SubType></Compile>
+    <Compile Include="UI\Pages\SubnetCalculatorPage.Designer.cs"><DependentUpon>SubnetCalculatorPage.cs</DependentUpon></Compile>
+    <EmbeddedResource Include="UI\Pages\SubnetCalculatorPage.resx"><DependentUpon>SubnetCalculatorPage.cs</DependentUpon><SubType>Designer</SubType></EmbeddedResource>
+    <Compile Include="UI\Pages\SystemInformationPage.cs"><SubType>UserControl</SubType></Compile>
+    <Compile Include="UI\Pages\SystemInformationPage.Runtime.cs"><DependentUpon>SystemInformationPage.cs</DependentUpon><SubType>Code</SubType></Compile>
+    <Compile Include="UI\Pages\SystemInformationPage.Designer.cs"><DependentUpon>SystemInformationPage.cs</DependentUpon></Compile>
+    <EmbeddedResource Include="UI\Pages\SystemInformationPage.resx"><DependentUpon>SystemInformationPage.cs</DependentUpon><SubType>Designer</SubType></EmbeddedResource>
+    <Compile Include="UI\Pages\TextFileJoinerPage.cs"><SubType>UserControl</SubType></Compile>
+    <Compile Include="UI\Pages\TextFileJoinerPage.Runtime.cs"><DependentUpon>TextFileJoinerPage.cs</DependentUpon><SubType>Code</SubType></Compile>
+    <Compile Include="UI\Pages\TextFileJoinerPage.Designer.cs"><DependentUpon>TextFileJoinerPage.cs</DependentUpon></Compile>
+    <EmbeddedResource Include="UI\Pages\TextFileJoinerPage.resx"><DependentUpon>TextFileJoinerPage.cs</DependentUpon><SubType>Designer</SubType></EmbeddedResource>
+    <Compile Include="ConsoleHelp.cs" />
+    <Compile Include="UI\WindowsSystemInfo.cs" />
+    <Compile Include="UpdateChecker.cs" />
+    <None Include="App.config" />
+    <None Include="app.manifest" />
+    <None Include="Assets\hammericon.svg" />
+    <None Include="Assets\polyvox-logo.png" />
+    <EmbeddedResource Include="Assets\hammericon.ico"><LogicalName>RTools.Assets.hammericon.ico</LogicalName></EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

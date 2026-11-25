@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34309.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTools", "RTools\RTools.csproj", "{340E1955-938A-4FC7-9BF4-5EB5509BA18B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTools.Tests", "RTools.Tests\RTools.Tests.csproj", "{4295F60A-8932-4339-A897-0B526C42BFE7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{340E1955-938A-4FC7-9BF4-5EB5509BA18B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{340E1955-938A-4FC7-9BF4-5EB5509BA18B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{340E1955-938A-4FC7-9BF4-5EB5509BA18B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{340E1955-938A-4FC7-9BF4-5EB5509BA18B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4295F60A-8932-4339-A897-0B526C42BFE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4295F60A-8932-4339-A897-0B526C42BFE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4295F60A-8932-4339-A897-0B526C42BFE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4295F60A-8932-4339-A897-0B526C42BFE7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
