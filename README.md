@@ -33,7 +33,7 @@ Version 2.0.0 introduces a redesigned Windows 11-inspired interface, an expanded
 - **12 built-in utilities** for file management, data processing, diagnostics, and development.
 - **Modern Windows interface** with searchable navigation, rounded controls, and the original RTools red accent colors.
 - **Light and dark themes** that remember your preference.
-- **Local processing** — your files and tool inputs are processed on your computer, not uploaded to an external service.
+- **Local processing**  your files and tool inputs are processed on your computer, not uploaded to an external service.
 - **Command-line support** for automating text file joining and search-and-append operations.
 - **Built-in help** with instructions for every utility and console examples.
 - **GitHub update checks** with a link to download newer releases when available.
