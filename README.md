@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="RTools/Assets/hammericon.svg" alt="RTools logo" width="112" />
+  <img src="RTools-2/Assets/hammericon.svg" alt="RTools logo" width="112" />
   <h1>RTools</h1>
   <p><strong>Small tools. Big time savings.</strong></p>
   <p>A Windows utility toolbox for everyday tasks, IT professionals, and developers.</p>
